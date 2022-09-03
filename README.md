@@ -1,3 +1,5 @@
+[![build](https://github.com/getforce-bootcamp/car-part/actions/workflows/build.yml/badge.svg)](https://github.com/getforce-bootcamp/car-part/actions/workflows/build.yml)
+
 ### Requirements
 - [Enable Dev Hub in your Org](https://www.youtube.com/watch?v=Y1pZ9sFcILo)
 - [Install Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
