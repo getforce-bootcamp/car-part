@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "auto-parts-retail-app",
+  "name": "car-part",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "55.0"
