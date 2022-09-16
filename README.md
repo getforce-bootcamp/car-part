@@ -35,6 +35,9 @@
     ```
     sfdx force:org:open
     ```
+## Entity–relationship model   
+<img width="986" alt="ER-diagram" src="https://user-images.githubusercontent.com/89274213/190663688-c9496343-d8e1-4036-a366-75310bbf85f8.png">    
+    
 ## Contributors
 <a href = "https://github.com/getforce-bootcamp/car-part/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=getforce-bootcamp/car-part"/>
