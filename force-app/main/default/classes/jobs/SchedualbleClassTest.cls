@@ -23,7 +23,7 @@ public class SchedulableApexTest {
                 cars.add(c);
             }
         
-        insert cars;`
+        insert cars;
         list<Car__c> carsTest=[Select id,name from car__c where name like 'Tesla%'];
         System.assertEquals(0,finTrans.size());
         
