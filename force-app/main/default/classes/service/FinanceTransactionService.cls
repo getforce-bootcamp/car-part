@@ -3,15 +3,14 @@ public with sharing class FinanceTransactionService {
     /**
      * Method to update storage cost if finance transaction type is storage
      * 
-     * @param oldMap old accounts
-     * @param newMap new accounts
+     * @param newPaymentsList new finance transactions
      * @author AaliAzamatuulu
      */
 
-    public static void storagePaymentTrigger(List<Finance_Transaction__c> paymentsList) {
+    public static void storagePaymentTrigger(List<Finance_Transaction__c> newPaymentsList) {
         Map<Id,Car__c> cars = new Map<Id,Car__c>();
         Map<Id,Car__c> carsToUpdate = new Map<Id,Car__c>();
-        for (Finance_Transaction__c payment : paymentsList) {
+        for (Finance_Transaction__c payment : newPaymentsList) {
             if(payment.Type__c == 'Storage') {
                 cars.put(payment.Car__c, null);
             }
@@ -19,7 +18,7 @@ public with sharing class FinanceTransactionService {
 
         cars.putAll([select storage_cost__c,id from car__c where id in: cars.keySet()]);
         
-        for (Finance_Transaction__c payment : paymentsList) {
+        for (Finance_Transaction__c payment : newPaymentsList) {
             if(payment.Type__c == 'Storage') {
                 Car__c carUpdate = carsToUpdate.get(payment.Car__c);
                 if(carUpdate == null) {
