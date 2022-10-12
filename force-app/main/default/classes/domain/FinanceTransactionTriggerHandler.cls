@@ -12,7 +12,7 @@ public class FinanceTransactionTriggerHandler extends TriggerHandler {
         this.oldFinanceTransactionMap = (Map<Id, Finance_Transaction__c>) Trigger.oldMap;
     }
 
-    public override void storagePaymentTrigger() {
+    public override void afterInsert() {
         FinanceTransactionService.storagePaymentTrigger(this.newFinanceTransactionList);
     }
 

@@ -1,11 +1,9 @@
 public with sharing class LeadService {
-
     /**
      * Web to Lead Form
   
      * @author Begimai Akulova
      */
-
     public static void triggerTest(List <Lead> leadList){
         for(Lead l:leadList){
             if(l.LeadSource=='Web'){
@@ -14,7 +12,7 @@ public with sharing class LeadService {
                 Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
                 
                 // Strings to hold the email addresses to which you are sending the email.
-                List<String> toAddresses = new List<String> {'testyestytesty@gmail.com'};
+                List<String> toAddresses = new List<String> {'begimai.akulova@gmail.com'};
                     //Assign the TO address to our mail object
                     mail.setToAddresses(toAddresses);
                 
@@ -31,5 +29,5 @@ public with sharing class LeadService {
                 Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
             }
         }
-    } 
+    }
 }

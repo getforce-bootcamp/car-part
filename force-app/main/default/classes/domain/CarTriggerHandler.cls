@@ -12,9 +12,11 @@ public with sharing class CarTriggerHandler extends TriggerHandler {
         this.oldCarMap = (Map<Id, Car__c>) Trigger.oldMap;
     }
     public override void beforeInsert() {
-        CarService.UpdateComissionField(newCarList);
+        CarService.updateDismantle(newCarList);
+        CarService.calculateComission(newCarList);
     }
     public override void beforeUpdate() {
-        CarServicee.UpdateComissionFieldd(newCarList);
+        CarService.updateDismantle(newCarList);
+        CarService.calculateComission(newCarList);
     }
 }
