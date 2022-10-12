@@ -1,8 +1,12 @@
 @isTest (SeeAllData=false)
 private class CarPartServiceTest {
+   /**
+     * If the part for export checks it with green, if it is for local sale check it with red.
+     *      * @author Ainura Akmatova
+     */  
     @TestSetup
     
-        public static void records(){
+        static void records(){
             
           Account acc = new Account(Name='Test Account');
           insert acc;
@@ -21,7 +25,7 @@ private class CarPartServiceTest {
         
         }
         @isTest
-        public static void testPossitive(){
+         static void testPossitive(){
             
             Car__c carNew = [Select  id from Car__c];
             Container__c contNew =[Select id from  Container__c];
@@ -39,7 +43,7 @@ private class CarPartServiceTest {
         }
         
         @isTest
-        public static void testNegative(){
+         static void testNegative(){
             Account  accNew = [Select Name, id from Account]; 
             Container__c contNew =[Select id from  Container__c];
             Contact conNew =[Select LastName, id from Contact];

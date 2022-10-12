@@ -11,9 +11,10 @@ public with sharing class ContainerTriggerHandler extends TriggerHandler {
         this.newContainerMap = (Map<Id, Container__c>) Trigger.newMap;
         this.oldContainerMap = (Map<Id, Container__c>) Trigger.oldMap;
     }
-    public override void ContainerTrigger(){
-        ContainerService.ContainerTrigger(oldContainerMap, newContainerList);
-
- 
+  
+    public override void beforeUpdate() {
+        ContainerService.ContainerTrigger(newContainerList,oldContainerMap);
+       
+    
 }
 }

@@ -1,8 +1,12 @@
 @isTest(SeeAllData=false)
 private class ContainerServicerTest {
-
+    /**
+* Demonstrative method to show where put trigger logic.
+* Load only the sold parts to Container and add price and weight of car part to ContainerвЂ™s fields.
+*      * @author Ainura Akmatova
+*/  
     @isTest
-    static void ContainerTrigger(){
+    Public static void ContainerCarParts(){
         
     Account acc = new Account(Name='Test Account');
       insert acc;
@@ -35,6 +39,7 @@ private class ContainerServicerTest {
         
       system.assertEquals(78780, newCont.Shipping_Price__c);
       system.assertEquals(1230, newCont.Weight__c);
-    }
+    }   
+
 }
 
