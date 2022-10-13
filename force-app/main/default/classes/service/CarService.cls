@@ -37,7 +37,51 @@ public with sharing class CarService {
             }
          }
 
-         
+     /**
+     * Method that counts distance between auction and yard
+     * 
+     * @param newCars new Cars
+     * @author AaliAzamatuulu
+     */
+
+     public static void calcDistance(List<Car__c> newCars) {
+        Account[] accList = [select id,Geolocation__c from account];
+        Set<Id> accIds = new Set<Id>();
+        
+        for (Account acc : accList) {
+            accIds.add(acc.id);
+        }
+        
+        List<Car__c> cars = [select id,Yard_Coordinates__c,Distance__c,Account__c from car__c where Account__c in :accIds];
+        
+        Double longt = 0;
+        Double lat = 0;
+        
+        for(Car__c carRecord : trigger.new) {
+            for(Car__c car : cars){
+                Location loc = car.Yard_Coordinates__c;
+                longt += loc.longitude;
+                lat += loc.latitude;
+            }
+            
+            Double acclongt = 0;
+            Double acclat = 0;
+            
+            for(Account acc : accList) {
+                try{
+                    Location accloc = acc.Geolocation__c;
+                    acclongt += accloc.longitude;
+                    acclat += accloc.latitude;
+                }
+                catch(Exception e) {
+                    system.debug(e.getMessage());
+                }
+            }
+            
+            Location loc1 = Location.newInstance(acclat,acclongt);
+            Location loc2 = Location.newInstance(lat,longt);
+            Double dist = Location.getDistance(loc1, loc2, 'km');
+            carRecord.Distance__c = dist;
+        }
     }
-
-
+}
