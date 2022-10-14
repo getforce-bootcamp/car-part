@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    height: 100vh;
+    padding-left: 700px;
+    background: url('https://ibb.co/Mf8HHMZ');
+    background-size: cover;
+    font-size: 20px;
+    
+}
+#lead_source{
+    display: none;
+}
+
+
