@@ -17,7 +17,6 @@ public with sharing class FinanceTransactionService {
         }
 
         cars.putAll([select storage_cost__c,id from car__c where id in: cars.keySet()]);
-        
         for (Finance_Transaction__c payment : newPaymentsList) {
             if(payment.Type__c == 'Storage') {
                 Car__c carUpdate = carsToUpdate.get(payment.Car__c);
@@ -30,7 +29,6 @@ public with sharing class FinanceTransactionService {
         
         update carsToUpdate.values();
     }
-    public with sharing class FinanceTransactionService { 
         /** 
          * Method update two fields in Cars object when in FinanceTransaction object chosen: 
          *   Type 'Sell' -> 'Amount' from FinanTransaction add to field 'Revenue' in Cars object; 
@@ -63,4 +61,3 @@ public with sharing class FinanceTransactionService {
              update carsToUpdate.values(); 
         } 
     }
-}

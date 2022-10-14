@@ -6,14 +6,14 @@ private class CarServiceTest {
      * @param carList 
      * @author Elmira
      */
-    @isTest public static void UpdateComissionField(){
+    @isTest public static void updateComissionField(){
         Contact con = new Contact ( LastName='Doe');
         insert con;
          contact c = [Select LastName, id from Contact limit 1];
          Car__c car=new Car__c(Name='Toyota',is_Dismantled__c=true, Driver__c= c.id);
         insert car;
         
- Car__c car2= [Select Name,Dismantle__c from Car__c];   
+        Car__c car2= [Select Name,Dismantle__c from Car__c];   
         system.assertEquals(200, car2.Dismantle__c);
     }
     
