@@ -75,5 +75,142 @@ private class CarServiceTest {
         System.assertEquals(400, carsInserted.get(0).Comission__c);
     }
 
-    
+     /** 
+     After purchasing the car, there is no storage charge at Auction for 3 days, then 4th day $5, 5th day $10, 6th day $15 afterwards $25 for each day.
+     * @param carList
+     * @author Elmira 
+     */ 
+    @isTest public static void CalcStorageCost(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        DateTime NOW = datetime.now();
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=NOW); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(0,cars2.Storage_Cost__c ); 
+       
+   }
+    @isTest public static void CalcStorageCost2(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+       
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 3); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(5,cars2.Storage_Cost__c ); 
+          
+   }
+     @isTest public static void CalcStorageCost3(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+      
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 4); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(10,cars2.Storage_Cost__c ); 
+          
+   }
+    @isTest public static void CalcStorageCost4(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 5); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(15,cars2.Storage_Cost__c ); 
+          
+   }
+    @isTest public static void CalcStorageCost5(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 6); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(25,cars2.Storage_Cost__c ); 
+          
+   }
+      @isTest public static void CalcStorageCost6(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 7); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(50,cars2.Storage_Cost__c ); 
+          
+   }
+     @isTest public static void CalcStorageCost7(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 8); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(75,cars2.Storage_Cost__c ); 
+          
+   }
+   @isTest public static void CalcStorageCost8(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 9); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(100,cars2.Storage_Cost__c ); 
+          
+   }
+       @isTest public static void CalcStorageCost9(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 10); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(125,cars2.Storage_Cost__c ); 
+          
+   }
+    @isTest public static void CalcStorageCost10(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 11); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(150,cars2.Storage_Cost__c ); 
+          
+   }
+    @isTest public static void CalcStorageCost11(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 12); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(175,cars2.Storage_Cost__c ); 
+          
+   }
+   @isTest public static void CalcStorageCost12(){
+        Contact con = new Contact ( LastName='Doe'); 
+       insert con; 
+        contact c = [Select LastName, id from Contact]; 
+        
+        Car__c car=new Car__c(Name='Toyota',Status__c='Auction', Driver__c= c.id,Purchase_Date__c=System.NOW() - 13); 
+       insert car; 
+       Car__c cars2= [select name, Status__c,Storage_Cost__c from Car__c ]; 
+       system.assertEquals(200,cars2.Storage_Cost__c ); 
+          
+   }
+ 
 }
