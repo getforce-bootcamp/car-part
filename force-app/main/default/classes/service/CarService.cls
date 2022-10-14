@@ -37,12 +37,6 @@ public with sharing class CarService {
             }
          }
 
-     /**
-     * Method that counts distance between auction and yard
-     * 
-     * @param newCars new Cars
-     * @author AaliAzamatuulu
-     */
 
      public static void calcDistance(List<Car__c> newCars) {
         Account[] accList = [select id,Geolocation__c from account];
