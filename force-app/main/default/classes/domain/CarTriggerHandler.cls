@@ -11,5 +11,9 @@ public with sharing class CarTriggerHandler extends TriggerHandler {
         this.newCarMap = (Map<Id, Car__c>) Trigger.newMap;
         this.oldCarMap = (Map<Id, Car__c>) Trigger.oldMap;
     }
+
+    public override void beforeInsert() {
+        CarService.UpdateStorageCost(newCarList);
+    }
     
 }
