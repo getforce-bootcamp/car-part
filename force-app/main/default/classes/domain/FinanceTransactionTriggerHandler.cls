@@ -15,5 +15,13 @@ public class FinanceTransactionTriggerHandler extends TriggerHandler {
     public override void afterInsert() {
         FinanceTransactionService.storagePaymentTrigger(this.newFinanceTransactionList);
     }
+ 
+public override void afterUpdate(){ 
+    FinanceTransactionService.updateRevenue(newFinanceTransactionList); 
+} 
+
+public override void afterInsert(){ 
+    FinanceTransactionService.updateRevenue(newFinanceTransactionList); 
+}
 
 }
