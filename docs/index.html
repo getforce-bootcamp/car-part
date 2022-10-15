@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name="oid" value="00D2z0000001mv0">
+    <input type=hidden name="retURL" value="http://google.com">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="begimai.akulova@gmail.com">                                      -->
+    <!--  ----------------------------------------------------------------------  -->
+
+        <div class="container">
+            <div class="row col-md-6 col -md-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h1>Registration Form</h1>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input class="form-control" id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="Enter your name" /><br>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input class="form-control"  id="last_name" maxlength="80" name="last_name" size="20" type="text" placeholder="Enter your last name" /><br>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="company">Company</label>
+                                <input class="form-control"  id="company" maxlength="40" name="company" size="20" type="text" placeholder=" Enter your Company" /><br>
+                                
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="city">Phone</label>
+                                <input class="form-control" id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Enter your phone number" /><br>
+                                
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="00N2z00000BR3Kd">Car Model</label>
+                                <input class="form-control"  id="00N2z00000BR3Kd" maxlength="30" name="00N2z00000BR3Kd" size="20" type="text" placeholder="Enter type model of your car" /><br>
+                                
+                            </div>
+                            <div class="form-group">
+
+                                <label for="state">Year</label>
+                                <input class="form-control"  id="00N2z00000BR3Ki" name="00N2z00000BR3Ki" size="20" type="text" placeholder="Enter production year of your car" /><br>
+                                
+                            </div>
+                            <div class="form-group">
+
+                                <label for="state">Mileage</label>
+                                <input class="form-control" id="00N2z00000BR3Kn" maxlength="16" name="00N2z00000BR3Kn" size="20" type="text" placeholder="Enter number of miles" /><br>
+                                
+                            </div>
+                            <div class="form-group">
+
+                                <label for="state">Price</label>
+                                <input class="form-control" id="00N2z00000BR3Ks" name="00N2z00000BR3Ks" size="20" type="text" placeholder="Enter price of your car"/><br>
+                                
+                            </div>
+
+                                <label for="lead_source"></label><select  id="lead_source" name="lead_source"><option value="">--None--</option>
+                                <option value="Web" selected>Web</option>
+
+                            <input type="submit" class="btn btn-primary" name="submit">
+
+                        </form>
+
+                    </div>
+                    <div class="panel-footer text-right">
+                       <small> &copy; Auto Parts Retail</small>
+                    </div>
+
+                </div>
+            </div>
+
+</div> 
+            <img src="" alt="">
+    
+</body>
+</html>

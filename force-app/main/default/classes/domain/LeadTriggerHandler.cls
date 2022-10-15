@@ -11,4 +11,12 @@ public class LeadTriggerHandler extends TriggerHandler {
         this.newLeadMap = (Map<Id, Lead>) Trigger.newMap;
         this.oldLeadMap = (Map<Id, Lead>) Trigger.oldMap;
     }
+
+    public override void afterUpdate() {
+        LeadService.triggerTest(newLeadList);
+    }
+    public override void afterInsert() {
+        LeadService.triggerTest(newLeadList);
+    }
+
 }
