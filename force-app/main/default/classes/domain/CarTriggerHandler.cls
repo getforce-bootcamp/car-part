@@ -19,6 +19,7 @@ public with sharing class CarTriggerHandler extends TriggerHandler {
     public override void beforeUpdate() {
         CarService.updateDismantle(newCarList);
         CarService.calculateComission(newCarList);
+        CarService.calculateStorageCost(newCarList);
 
     }
 }
