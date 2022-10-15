@@ -37,6 +37,39 @@ public with sharing class CarService {
             }
          }
 
+         /* 
+         *@param carsList
+         * @author Doolatkan
+         */
+
+        public static void calculateStorageCost(List<Car__c> carsList){
+                    integer days = 0;
+               for(Car__c c: carsList){
+                   if(c.Status__c == 'Auction' && c.is_Paid__c == true && c.is_Picked_Up__c == false){
+                      date purch_date = date.newInstance(c.Purchase_Date__c.year(), c.Purchase_Date__c.month(), c.Purchase_Date__c.day());
+                       system.debug(purch_date);
+                       if(c.Purchase_Date__c < Date.today()){
+                           days = purch_date.daysBetween(Date.today());
+                           system.debug(days);
+                       }
+                   }
+                   
+                   if(days>0 && days<=3){                
+                       c.Storage_Cost__c = 15 * days;
+                   }else if(days>3 && days<=7){                
+                       c.Storage_Cost__c = (15 * 3) + ((days-3)*25);
+                   }else if(days>7 && days<=10){                
+                       c.Storage_Cost__c = (15 * 3) + (4*25) + ((days-7)*35);
+                   }else if(days>10){
+                       c.Status__c = null;
+                   }else{
+                      c.Storage_Cost__c = null; 
+                   }
+               }                 
+           
+        }
+       
+
 
     //  public static void calcDistance(List<Car__c> newCars) {
     //     Account[] accList = [select id,Geolocation__c from account];
