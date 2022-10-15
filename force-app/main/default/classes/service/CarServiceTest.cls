@@ -218,9 +218,9 @@ private class CarServiceTest {
         Contact con = new Contact(lastname = 'John');
         insert con;
         
-        Contact conIns = [Select id from Contact];
+        List<Contact> conIns = [Select id from Contact];
         
-        Car__c car = new Car__c(Name = 'Toyota', driver__c = conIns.id, Status__c = 'Auction', is_Paid__c = true, purchase_Date__c = date.today());
+        Car__c car = new Car__c(Name = 'Toyota', driver__c = conIns[0].id, Status__c = 'Auction', is_Paid__c = true, purchase_Date__c = date.today());
         insert car;
         
         Car__c carInserted = [Select name, purchase_Date__c, storage_cost__c from Car__c];
